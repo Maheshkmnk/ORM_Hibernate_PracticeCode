@@ -1,0 +1,47 @@
+package in.mypackage.controller;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import in.mypackage.model.StdTab;
+import in.mypackage.util.HibernateUtil;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Session session = null;
+		Transaction transaction = null;
+		try {
+			session = HibernateUtil.getSession();
+			if(session != null)
+				transaction = session.beginTransaction();
+			
+			StdTab stdTab = new StdTab();
+			
+			stdTab.setSaddress("kkd");
+			stdTab.setSage(26);
+			stdTab.setSid(29);
+			stdTab.setSname("kmnk");
+			
+			session.save(stdTab);
+			
+		} catch (HibernateException he) {
+			he.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		finally {
+			transaction.commit();
+			
+			HibernateUtil.closeSession(session);
+			HibernateUtil.closeSessionFactory();
+		}
+		
+		transaction.commit();
+		
+		System.out.println("done");
+	}
+
+}

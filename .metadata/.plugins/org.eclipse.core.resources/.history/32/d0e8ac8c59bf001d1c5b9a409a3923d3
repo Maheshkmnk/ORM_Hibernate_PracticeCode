@@ -1,0 +1,52 @@
+package in.mypackage.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class JobSeeker implements Serializable {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer jsId;
+	
+	private String jsName;
+	
+	private String jsAddr;
+
+	public Integer getJsId() {
+		return jsId;
+	}
+
+	public void setJsId(Integer jsId) {
+		this.jsId = jsId;
+	}
+
+	public String getJsName() {
+		return jsName;
+	}
+
+	public void setJsName(String jsName) {
+		this.jsName = jsName;
+	}
+
+	public String getJsAddr() {
+		return jsAddr;
+	}
+
+	public void setJsAddr(String jsAddr) {
+		this.jsAddr = jsAddr;
+	}
+
+	@Override
+	public String toString() {
+		return "JobSeeker [jsId=" + jsId + ", jsName=" + jsName + ", jsAddr=" + jsAddr + "]";
+	}
+
+	
+
+}

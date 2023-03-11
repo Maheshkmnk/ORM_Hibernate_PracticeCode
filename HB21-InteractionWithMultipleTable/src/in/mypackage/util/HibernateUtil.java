@@ -1,0 +1,41 @@
+package in.mypackage.util;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import in.mypackage.model.BookData;
+import in.mypackage.model.CustomerDetails;
+import in.mypackage.model.OrderDetails;
+
+public class HibernateUtil {
+
+	private static SessionFactory sessionFactory = null;
+	private static Session session = null;
+	
+
+	private HibernateUtil() {
+	}
+
+	static {
+		sessionFactory = new Configuration().configure().addAnnotatedClass(CustomerDetails.class)
+				.addAnnotatedClass(BookData.class).addAnnotatedClass(OrderDetails.class).buildSessionFactory();
+	}
+
+	public static Session getSession() {
+		if (session == null)
+			session = sessionFactory.openSession();
+		return session;
+	}
+
+	public static void closeSession(Session session) {
+		if (session != null)
+			session.close();
+	}
+
+	public static void closeSessionFactory() {
+		if (sessionFactory != null)
+			sessionFactory.close();
+	}
+
+}

@@ -1,0 +1,81 @@
+package in.mypackage.model;
+
+import java.io.Serializable;
+
+public class CustomerDetails implements Serializable {
+
+	private String uid;
+	private String uemail;
+	private String password;
+
+	public String getuID() {
+		return uid;
+	}
+
+	public void setuID(String uid) {
+		this.uid = uid;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getUemail() {
+		return uemail;
+	}
+
+	public void setUemail(String uemail) {
+		this.uemail = uemail;
+	}
+
+	public String getEmobile() {
+		return emobile;
+	}
+
+	public void setEmobile(String emobile) {
+		this.emobile = emobile;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUgender() {
+		return ugender;
+	}
+
+	public void setUgender(String ugender) {
+		this.ugender = ugender;
+	}
+
+	public Integer getUage() {
+		return uage;
+	}
+
+	public void setUage(Integer uage) {
+		this.uage = uage;
+	}
+
+	public String getUaddress() {
+		return uaddress;
+	}
+
+	public void setUaddress(String uaddress) {
+		this.uaddress = uaddress;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerDetails [uID=" + uid + ", uname=" + uname + ", uemail=" + uemail + ", emobile=" + emobile
+				+ ", password=" + password + ", ugender=" + ugender + ", uage=" + uage + ", uaddress=" + uaddress + "]";
+	}
+
+}

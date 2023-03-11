@@ -1,0 +1,20 @@
+package in.mypackage.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+public class CustomerDetails implements Serializable {
+
+	private static final long serialVersionUID = -6463377154267798065L;
+	private String uid;
+	private String uemail;
+	private String password;
+
+	@Override
+	public String toString() {
+		return "CustomerDetails [uid=" + uid + ", uemail=" + uemail + ", password=" + password + "]";
+	}
+
+}

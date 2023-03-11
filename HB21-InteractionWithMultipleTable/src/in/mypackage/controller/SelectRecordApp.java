@@ -1,0 +1,14 @@
+package in.mypackage.controller;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+
+import in.mypackage.util.HibernateUtil;
+
+public class SelectRecordApp {
+
+	public static void main(String[] args) throws Exception {
+		Session session = null;
+
+	}
+}

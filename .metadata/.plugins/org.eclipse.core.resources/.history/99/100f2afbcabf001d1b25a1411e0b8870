@@ -1,0 +1,54 @@
+package in.mypackage.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class OrderDetails implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer transactionId;
+
+	private Integer uid;
+
+	private Integer bid;
+
+	
+
+	
+	public Integer getoTransactionId() {
+		return transactionId;
+	}
+
+	public void setoTransactionId(Integer transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Integer getUid() {
+		return uid;
+	}
+
+	public void setUid(Integer uid) {
+		this.uid = uid;
+	}
+
+	public Integer getBid() {
+		return bid;
+	}
+
+	public void setBid(Integer bid) {
+		this.bid = bid;
+	}
+
+	@Override
+	public String toString() {
+		return "OrderDetails [oTransactionId=" + oTransactionId + ", uid=" + uid + ", bid=" + bid + "]";
+	}
+}

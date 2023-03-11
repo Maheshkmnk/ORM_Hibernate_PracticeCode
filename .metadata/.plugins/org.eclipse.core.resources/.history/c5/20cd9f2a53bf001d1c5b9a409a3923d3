@@ -1,0 +1,61 @@
+package in.mypackage.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+public class BookData implements Serializable {
+	private Integer bid;
+	private String bname;
+	private String bgenres;
+	private String bookWriterName;
+	private String language;
+
+	@Override
+	public String toString() {
+		return "BookData [bid=" + bid + ", bname=" + bname + ", bgenres=" + bgenres + ", bookWriterName="
+				+ bookWriterName + ", language=" + language + "]";
+	}
+
+	public Integer getBid() {
+		return bid;
+	}
+
+	public void setBid(Integer bid) {
+		this.bid = bid;
+	}
+
+	public String getBname() {
+		return bname;
+	}
+
+	public void setBname(String bname) {
+		this.bname = bname;
+	}
+
+	public String getBgenres() {
+		return bgenres;
+	}
+
+	public void setBgenres(String bgenres) {
+		this.bgenres = bgenres;
+	}
+
+	public String getBookWriterName() {
+		return bookWriterName;
+	}
+
+	public void setBookWriterName(String bookWriterName) {
+		this.bookWriterName = bookWriterName;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+}
